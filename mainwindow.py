@@ -225,7 +225,7 @@ class Ui_MainWindow(object):
         self.reu.setItemText(2, _translate("MainWindow", "2 MB of REU"))
         self.reu.setItemText(3, _translate("MainWindow", "16 MB of REU"))
         self.mouse.setItemText(1, _translate("MainWindow", "1351 Mouse as joy #1"))
-        self.mouse.setItemText(2, _translate("MainWindow", "1351 Mouse as joy #1"))
+        self.mouse.setItemText(2, _translate("MainWindow", "1351 Mouse as joy #2"))
         self.label_5.setText(_translate("MainWindow", "Mouse"))
         self.menu_File.setTitle(_translate("MainWindow", "&File"))
         self.menu_Help.setTitle(_translate("MainWindow", "&Help"))

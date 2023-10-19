@@ -35,7 +35,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.bank2.toggled.connect(self.rebuild_cjm)
         self.bank3.toggled.connect(self.rebuild_cjm)
         self.bank5.toggled.connect(self.rebuild_cjm)
-
+        keys=["JU","JD","JL","JR","JF","F1","F2","F3","F4","F5","F6","F7","F8","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0","AL",
+"AU","CM","CO","CT","CU","CD","CL","CR","DL","EN","HM","RS","RE","SL","SR","SS","SP","PO"]
         self.path = ""
         self.basename = ""
         self.extension = ""
@@ -55,6 +56,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.path = os.path.dirname(name[0])
             (self.basename, self.extension) = os.path.splitext(os.path.basename((name[0])))
             self.cjm_type = self.extension == ".cjm"
+            if self.cjm_type:
+                pass
+            else:
+                self.parse_filename()
             self.rebuild_cjm("")
 
     def file_rename(self, s):
@@ -76,7 +81,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if self.diskmode.currentIndex() > 0:
             inner += ("", "AD", "RO", "CD")[self.diskmode.currentIndex()]
         if self.reu.currentIndex() > 0:
-            inner += ("", "R5", "R2", "RM")[self.diskmode.currentIndex()]
+            inner += ("", "R5", "R2", "RM")[self.reu.currentIndex()]
         if self.setmorejoy.isChecked():
             inner += "JA"
         if self.setfh.isChecked():
@@ -108,9 +113,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRename.setEnabled(not self.cjm_type and self.original != "")
 
     def clear_form(self) -> None:
-        for item in [self.model, self.model2, self.joystick, self.diskmode]:
+        for item in [self.model, self.model2, self.joystick, self.mouse,self.diskmode,self.reu]:
             item.setCurrentIndex(0)
-        for item in [self.setfh, self.setdi, self.setns, self.bank0, self.bank1, self.bank2, self.bank3, self.bank5]:
+        for item in [self.setmorejoy,self.setfh, self.setdi, self.setns, self.bank0, self.bank1, self.bank2, self.bank3, self.bank5]:
             item.setChecked(False)
 
 
