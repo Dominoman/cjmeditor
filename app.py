@@ -8,7 +8,7 @@ from mainwindow import Ui_MainWindow
 
 
 # TODO: file name parse
-# TODO: CJM file save
+# TODO: CJM file generate/save
 # TODO: CJM file parsing
 # TODO: invalid combinations
 
@@ -71,11 +71,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             inner += ("", "TP", "TN")[self.model2.currentIndex()]
         if self.joystick.currentIndex() > 0:
             inner += ("", "J1", "J2")[self.joystick.currentIndex()]
+        if self.mouse.currentIndex() > 0:
+            inner += ("", "P1", "P2")[self.mouse.currentIndex()]
         if self.diskmode.currentIndex() > 0:
             inner += ("", "AD", "RO", "CD")[self.diskmode.currentIndex()]
         if self.reu.currentIndex() > 0:
             inner += ("", "R5", "R2", "RM")[self.diskmode.currentIndex()]
-
+        if self.setmorejoy.isChecked():
+            inner += "JA"
         if self.setfh.isChecked():
             inner += "FH"
         if self.setdi.isChecked():
@@ -98,39 +101,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         return result
 
     def get_cjm(self) -> str:
-        result = ""
-        tmp = []
-        if self.model.currentIndex() > 0:
-            tmp.append(("", "64", "vic")[self.model.currentIndex()])
-        if self.model2.currentIndex() > 0:
-            tmp.append(("", "pal", "ntsc")[self.model2.currentIndex()])
-        if self.diskmode.currentIndex() > 0:
-            tmp.append(("", "accuratedisk", "readonly", "")[self.diskmode.currentIndex()])
-        if self.setfh.isChecked():
-            tmp.append("fullheight")
-        if self.setdi.isChecked():
-            tmp.append("driveicon")
-        if self.setns.isChecked():
-            tmp.append("noaudioscale")
-        if self.bank0.isChecked():
-            tmp.append("bank0")
-        if self.bank1.isChecked():
-            tmp.append("bank1")
-        if self.bank2.isChecked():
-            tmp.append("bank2")
-        if self.bank3.isChecked():
-            tmp.append("bank3")
-        if self.bank5.isChecked():
-            tmp.append("bank5")
-        if "" in tmp:
-            tmp.remove("")
-        if len(tmp) > 0:
-            result = "X:" + ",".join(tmp)
-        return result
+        pass
 
     def rebuild_cjm(self, value) -> None:
         self.fileName.setText(self.get_filename())
-        self.cjmcontent.setPlainText(self.get_cjm())
         self.actionRename.setEnabled(not self.cjm_type and self.original != "")
 
     def clear_form(self) -> None:
