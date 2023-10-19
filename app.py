@@ -6,6 +6,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog
 
 from mainwindow import Ui_MainWindow
 
+
 # TODO: file name parse
 # TODO: CJM file save
 # TODO: CJM file parsing
