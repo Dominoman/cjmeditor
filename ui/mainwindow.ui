@@ -6,455 +6,431 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>618</width>
-    <height>336</height>
+    <width>633</width>
+    <height>385</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>CJM Editor</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>11</x>
-      <y>11</y>
-      <width>591</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>20</height>
-     </size>
-    </property>
-    <property name="palette">
-     <palette>
-      <active>
-       <colorrole role="Window">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>202</red>
-          <green>202</green>
-          <blue>202</blue>
-         </color>
-        </brush>
-       </colorrole>
-      </active>
-      <inactive>
-       <colorrole role="Window">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>202</red>
-          <green>202</green>
-          <blue>202</blue>
-         </color>
-        </brush>
-       </colorrole>
-      </inactive>
-      <disabled>
-       <colorrole role="Base">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>202</red>
-          <green>202</green>
-          <blue>202</blue>
-         </color>
-        </brush>
-       </colorrole>
-       <colorrole role="Window">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>202</red>
-          <green>202</green>
-          <blue>202</blue>
-         </color>
-        </brush>
-       </colorrole>
-      </disabled>
-     </palette>
-    </property>
-    <property name="autoFillBackground">
-     <bool>true</bool>
-    </property>
-    <property name="title">
-     <string/>
-    </property>
-    <property name="flat">
-     <bool>false</bool>
-    </property>
-    <widget class="QLabel" name="fileName">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>451</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QComboBox" name="diskmode">
-    <property name="geometry">
-     <rect>
-      <x>369</x>
-      <y>107</y>
-      <width>124</width>
-      <height>21</height>
-     </rect>
-    </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
-     <property name="text">
-      <string/>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Accurate disk</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Read only</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Continuation disks</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QComboBox" name="model">
-    <property name="geometry">
-     <rect>
-      <x>13</x>
-      <y>107</y>
-      <width>59</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string/>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>C64</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>VIC 20</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QComboBox" name="joystick">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>107</y>
-      <width>82</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string/>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Joystick #1</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Joystick #2</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>13</x>
-      <y>90</y>
-      <width>59</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="text">
-     <string>Model:</string>
-    </property>
-    <property name="buddy">
-     <cstring>model</cstring>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>369</x>
-      <y>90</y>
-      <width>124</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>20</height>
-     </size>
-    </property>
-    <property name="text">
-     <string>Disk mode</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="model2">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>107</y>
-      <width>54</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string/>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>PAL</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>NTSC</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>90</y>
-      <width>82</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="text">
-     <string>Joystick</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>150</y>
-      <width>164</width>
-      <height>100</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QCheckBox" name="setmorejoy">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>202</red>
+            <green>202</green>
+            <blue>202</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>202</red>
+            <green>202</green>
+            <blue>202</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>202</red>
+            <green>202</green>
+            <blue>202</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>202</red>
+            <green>202</green>
+            <blue>202</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+      <widget class="QLabel" name="fileName">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>451</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>Enable additional joysticks</string>
+        <string>TextLabel</string>
        </property>
       </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="setfh">
-       <property name="text">
-        <string>Full height</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="setdi">
-       <property name="text">
-        <string>Disables the drive icon</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="setns">
-       <property name="text">
-        <string>Disables Audio scaling</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>150</y>
-      <width>204</width>
-      <height>130</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QCheckBox" name="bank0">
-       <property name="text">
-        <string>Bank 0</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="bank1">
-       <property name="text">
-        <string>Bank 1</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="bank2">
-       <property name="text">
-        <string>Bank 2</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="bank3">
-       <property name="text">
-        <string>Bank 3</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="bank5">
-       <property name="text">
-        <string>Bank 5</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>90</y>
-      <width>101</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Expanded memory</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="reu">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>107</y>
-      <width>101</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string/>
-     </property>
+     </widget>
     </item>
     <item>
-     <property name="text">
-      <string>512 kB of REU</string>
-     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Model:</string>
+        </property>
+        <property name="buddy">
+         <cstring>model</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Joystick</string>
+        </property>
+        <property name="buddy">
+         <cstring>joystick</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="label_5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Mouse</string>
+        </property>
+        <property name="buddy">
+         <cstring>mouse</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="label_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Disk mode</string>
+        </property>
+        <property name="buddy">
+         <cstring>diskmode</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Expanded memory</string>
+        </property>
+        <property name="buddy">
+         <cstring>reu</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QComboBox" name="model">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>C64</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>VIC 20</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="model2">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>PAL</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>NTSC</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QComboBox" name="joystick">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Joystick #1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Joystick #2</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QComboBox" name="mouse">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>1351 Mouse as joy #1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>1351 Mouse as joy #2</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QComboBox" name="diskmode">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Accurate disk</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Read only</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Continuation disks</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="5">
+       <widget class="QComboBox" name="reu">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>512 kB of REU</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2 MB of REU</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>16 MB of REU</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
-     <property name="text">
-      <string>2 MB of REU</string>
-     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QCheckBox" name="setmorejoy">
+          <property name="text">
+           <string>Enable additional joysticks</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="setfh">
+          <property name="text">
+           <string>Full height</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="setdi">
+          <property name="text">
+           <string>Disables the drive icon</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="setns">
+          <property name="text">
+           <string>Disables Audio scaling</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QCheckBox" name="bank0">
+          <property name="text">
+           <string>Bank 0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="bank1">
+          <property name="text">
+           <string>Bank 1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="bank2">
+          <property name="text">
+           <string>Bank 2</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="bank3">
+          <property name="text">
+           <string>Bank 3</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="bank5">
+          <property name="text">
+           <string>Bank 5</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPlainTextEdit" name="cjmsource">
+        <property name="lineWrapMode">
+         <enum>QPlainTextEdit::NoWrap</enum>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
-     <property name="text">
-      <string>16 MB of REU</string>
-     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="joy1">
+        <property name="text">
+         <string>Joystick 1</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="joy2">
+        <property name="text">
+         <string>Joystick 2</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="joy3">
+        <property name="text">
+         <string>Joystick 3</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="joy4">
+        <property name="text">
+         <string>Joystick 4</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
-   </widget>
-   <widget class="QComboBox" name="mouse">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>107</y>
-      <width>141</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string/>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>1351 Mouse as joy #1</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>1351 Mouse as joy #2</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>90</y>
-      <width>82</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="text">
-     <string>Mouse</string>
-    </property>
-   </widget>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>618</width>
+     <width>633</width>
      <height>22</height>
     </rect>
    </property>
@@ -510,6 +486,27 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>model</tabstop>
+  <tabstop>model2</tabstop>
+  <tabstop>joystick</tabstop>
+  <tabstop>mouse</tabstop>
+  <tabstop>diskmode</tabstop>
+  <tabstop>reu</tabstop>
+  <tabstop>setmorejoy</tabstop>
+  <tabstop>setfh</tabstop>
+  <tabstop>setdi</tabstop>
+  <tabstop>setns</tabstop>
+  <tabstop>bank0</tabstop>
+  <tabstop>bank1</tabstop>
+  <tabstop>bank2</tabstop>
+  <tabstop>bank3</tabstop>
+  <tabstop>bank5</tabstop>
+  <tabstop>joy1</tabstop>
+  <tabstop>joy2</tabstop>
+  <tabstop>joy3</tabstop>
+  <tabstop>joy4</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
