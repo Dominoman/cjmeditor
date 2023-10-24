@@ -440,6 +440,7 @@
     </property>
     <addaction name="action_Open"/>
     <addaction name="actionRename"/>
+    <addaction name="action_Save_cjm"/>
     <addaction name="separator"/>
     <addaction name="actionE_xit"/>
    </widget>
@@ -473,6 +474,9 @@
    </property>
   </action>
   <action name="action_About">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>&amp;About</string>
    </property>
@@ -483,6 +487,17 @@
    </property>
    <property name="text">
     <string>Rename</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="action_Save_cjm">
+   <property name="text">
+    <string>&amp;Save cjm</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
  </widget>

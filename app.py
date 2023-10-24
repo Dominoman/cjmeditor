@@ -6,11 +6,6 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog
 
 from mainwindow import Ui_MainWindow
 
-# TODO: Joy configs
-# TODO: CJM file generate/save
-# TODO: CJM file parsing
-# TODO: invalid combinations
-
 
 MODES = ("", "M6", "MV")
 MODES2 = ("", "TP", "TN")
@@ -40,6 +35,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionE_xit.triggered.connect(self.file_exit)
         self.action_Open.triggered.connect(self.file_open)
         self.actionRename.triggered.connect(self.file_rename)
+        self.action_Save_cjm.triggered.connect(self.file_save)
         self.model.currentIndexChanged.connect(self.form_change)
         self.model2.currentIndexChanged.connect(self.form_change)
         self.joystick.currentIndexChanged.connect(self.form_change)
@@ -59,7 +55,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.basename = ""
         self.extension = ""
         self.original = ""
-        self.cjm_type = False
+        self.cjm_type = True
         self.form_change("")
 
     def file_exit(self, s):
@@ -79,16 +75,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             else:
                 self.parse_filename()
             self.form_change("")
-            self.statusbar.showMessage(f"File {name[0]} loaded.",2000)
+            self.statusbar.showMessage(f"File {name[0]} loaded.", 2000)
 
-    def joystick_config(self):
-        pass
+    def file_save(self, s):
+        if self.cjm_type:
+            pass
+        else:
+            pass
 
     def file_rename(self, s):
         new_name = os.path.join(os.path.abspath(self.path), self.get_filename())
         rename(self.original, new_name)
-        self.statusbar.showMessage(f"File {self.original} renamed to {new_name}",2000)
+        self.statusbar.showMessage(f"File {self.original} renamed to {new_name}", 2000)
         self.original = new_name
+
+    def joystick_config(self):
+        pass
 
     def get_filename(self) -> str:
         flags = ""
