@@ -2,6 +2,7 @@ import os.path
 import sys
 from os import rename
 
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog
 
 from mainwindow import Ui_MainWindow
@@ -26,13 +27,15 @@ JOYLABELS = ["Joy Up", "Joy Down", "Joy Left", "Joy Right", "Joy Fire", "F1", "F
              "RETURN", "Clr/Home", "Run/Stop", "RESTORE", "Left Shift", "Right Shift", "Shift Lock", "SPACE",
              "£"]
 
-VIC20BANKS = {"3 kB":("B0"),"4 kB":(),"8 kB":("B1"),"16 kB":("B1","B2"),"24 kB":("B1","B2","B3"),"32 kB":("B1","B2","B3","B5"),"35 kB":("B0","B1","B2","B3","B5")}
+VIC20BANKS = {"3 kB": ("B0"), "8 kB": ("B1"), "16 kB": ("B1", "B2"), "24 kB": ("B1", "B2", "B3"),
+              "32 kB": ("B1", "B2", "B3", "B5"), "35 kB": ("B0", "B1", "B2", "B3", "B5")}
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, *args, obj=None, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setupUi(self)
+        self.setWindowIcon(QIcon("images\\logo.png"))
         self.actionE_xit.triggered.connect(self.file_exit)
         self.action_Open.triggered.connect(self.file_open)
         self.actionRename.triggered.connect(self.file_rename)
@@ -94,7 +97,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def ram_change(self, value):
         value = self.ramsetting.currentText()
         if value in VIC20BANKS:
-            for bank in ["B0","B1","B2","B3","B5"]:
+            for bank in ["B0", "B1", "B2", "B3", "B5"]:
                 if bank in VIC20BANKS[value]:
                     self.chbxs[bank].setChecked(True)
                 else:

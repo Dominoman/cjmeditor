@@ -362,11 +362,6 @@
           </item>
           <item>
            <property name="text">
-            <string>4 kB</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
             <string>8 kB</string>
            </property>
           </item>
