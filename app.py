@@ -26,6 +26,8 @@ JOYLABELS = ["Joy Up", "Joy Down", "Joy Left", "Joy Right", "Joy Fire", "F1", "F
              "RETURN", "Clr/Home", "Run/Stop", "RESTORE", "Left Shift", "Right Shift", "Shift Lock", "SPACE",
              "£"]
 
+VIC20BANKS = {"3 kB":("B0"),"4 kB":(),"8 kB":("B1"),"16 kB":("B1","B2"),"24 kB":("B1","B2","B3"),"32 kB":("B1","B2","B3","B5"),"35 kB":("B0","B1","B2","B3","B5")}
+
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, *args, obj=None, **kwargs):
@@ -90,7 +92,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.original = new_name
 
     def ram_change(self, value):
-        self.ramsetting.setCurrentIndes(0)
+        value = self.ramsetting.currentText()
+        if value in VIC20BANKS:
+            for bank in ["B0","B1","B2","B3","B5"]:
+                if bank in VIC20BANKS[value]:
+                    self.chbxs[bank].setChecked(True)
+                else:
+                    self.chbxs[bank].setChecked(False)
+        self.ramsetting.setCurrentIndex(0)
 
     def joystick_config(self):
         pass

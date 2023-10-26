@@ -357,37 +357,37 @@
           </item>
           <item>
            <property name="text">
-            <string>3k</string>
+            <string>3 kB</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>4k</string>
+            <string>4 kB</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>8k</string>
+            <string>8 kB</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>16k</string>
+            <string>16 kB</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>24k</string>
+            <string>24 kB</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>32k</string>
+            <string>32 kB</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>35k</string>
+            <string>35 kB</string>
            </property>
           </item>
          </widget>
