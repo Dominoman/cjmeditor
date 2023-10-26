@@ -6,7 +6,6 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog
 
 from mainwindow import Ui_MainWindow
 
-
 MODES = ("", "M6", "MV")
 MODES2 = ("", "TP", "TN")
 JOY = ("", "J1", "J2")
@@ -46,6 +45,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                       "B1": self.bank1, "B2": self.bank2, "B3": self.bank3, "B5": self.bank5}
         for cb in self.chbxs.values():
             cb.toggled.connect(self.form_change)
+        self.ramsetting.currentIndexChanged.connect(self.ram_change)
         self.joy1.clicked.connect(self.joystick_config)
         self.joy2.clicked.connect(self.joystick_config)
         self.joy3.clicked.connect(self.joystick_config)
@@ -58,10 +58,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.cjm_type = True
         self.form_change("")
 
-    def file_exit(self, s):
+    def file_exit(self, value):
         self.close()
 
-    def file_open(self, s):
+    def file_open(self, value):
         name = QFileDialog.getOpenFileName(self, "Open file", filter=self.tr(
             "CJM files (*.cjm);;virtual disk file (*.d64 *.g64 *d81);;virtual cartridge file (*.crt);;standard virtual tape file (*.tap *.t64);;stand-alone virtual program file (*.prg *.p00);;all files (*.*) "))
         if name[0] != "":
@@ -77,20 +77,28 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.form_change("")
             self.statusbar.showMessage(f"File {name[0]} loaded.", 2000)
 
-    def file_save(self, s):
+    def file_save(self, value):
         if self.cjm_type:
             pass
         else:
             pass
 
-    def file_rename(self, s):
+    def file_rename(self, value):
         new_name = os.path.join(os.path.abspath(self.path), self.get_filename())
         rename(self.original, new_name)
         self.statusbar.showMessage(f"File {self.original} renamed to {new_name}", 2000)
         self.original = new_name
 
+    def ram_change(self, value):
+        self.ramsetting.setCurrentIndes(0)
+
     def joystick_config(self):
         pass
+
+    def form_change(self, value) -> None:
+        self.fileName.setText(self.get_filename())
+        self.cjmsource.setPlainText(self.get_cjm())
+        self.actionRename.setEnabled(not self.cjm_type and self.original != "")
 
     def get_filename(self) -> str:
         flags = ""
@@ -151,11 +159,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         return result
 
-    def form_change(self, value) -> None:
-        self.fileName.setText(self.get_filename())
-        self.cjmsource.setPlainText(self.get_cjm())
-        self.actionRename.setEnabled(not self.cjm_type and self.original != "")
-
     def clear_form(self) -> None:
         for item in [self.model, self.model2, self.joystick, self.mouse, self.diskmode, self.reu]:
             item.setCurrentIndex(0)
@@ -184,7 +187,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             elif flag in self.chbxs:
                 self.chbxs[flag].setChecked(True)
             else:
-                print("Unknow flag")
+                print("Unknown flag")
         self.basename = self.basename[:-len(items[-1]) - 1]
 
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>633</width>
-    <height>385</height>
+    <height>382</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -343,6 +343,56 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
+         <widget class="QComboBox" name="ramsetting">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>0</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>Ram setting</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3k</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4k</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8k</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>16k</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>24k</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>32k</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>35k</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
          <widget class="QCheckBox" name="bank0">
           <property name="text">
            <string>Bank 0</string>
@@ -498,6 +548,41 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action3k">
+   <property name="text">
+    <string>3k</string>
+   </property>
+  </action>
+  <action name="action4k">
+   <property name="text">
+    <string>4k</string>
+   </property>
+  </action>
+  <action name="action8k">
+   <property name="text">
+    <string>8k</string>
+   </property>
+  </action>
+  <action name="action16k">
+   <property name="text">
+    <string>16k</string>
+   </property>
+  </action>
+  <action name="action24k">
+   <property name="text">
+    <string>24k</string>
+   </property>
+  </action>
+  <action name="action32k">
+   <property name="text">
+    <string>32k</string>
+   </property>
+  </action>
+  <action name="action35k">
+   <property name="text">
+    <string>35k</string>
    </property>
   </action>
  </widget>
