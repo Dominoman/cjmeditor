@@ -4,9 +4,7 @@
 
 ### TODO:
 
-- Joysticks configs
 - CJM file generator/save
 - CJM file open/parsing
-- invalid combinations
 - multi level CJMs
 

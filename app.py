@@ -98,7 +98,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             (self.basename, self.extension) = os.path.splitext(os.path.basename((name[0])))
             self.cjm_type = self.extension == ".cjm"
             if self.cjm_type:
-                pass
+                with open(self.original,'r') as f:
+                    txt=f.read()
             else:
                 self.parse_filename()
             self.form_change("")
