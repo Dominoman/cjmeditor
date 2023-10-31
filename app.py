@@ -74,6 +74,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.joy2.clicked.connect(self.joystick_config)
         self.joy3.clicked.connect(self.joystick_config)
         self.joy4.clicked.connect(self.joystick_config)
+        self.vshift.valueChanged.connect(self.form_change)
 
         self.path = ""
         self.basename = ""
@@ -194,6 +195,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for i in range(4 if self.setmorejoy.isChecked() else 2):
             tmp = self.joy_config[i][:-1]
             result += f"J:{i + 1}{'*' if self.joystick.currentIndex()==i+1 else ''}:{','.join(tmp)}\n"
+        if self.vshift.value()!=0:
+            result += f"V:{self.vshift.value()}\n"
         return result
 
     def clear_form(self) -> None:
@@ -202,6 +205,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for item in [self.setmorejoy, self.setfh, self.setdi, self.setns, self.bank0, self.bank1, self.bank2,
                      self.bank3, self.bank5]:
             item.setChecked(False)
+        self.vshift.setValue(0)
 
     def parse_filename(self) -> None:
         items = self.basename.split('_')
