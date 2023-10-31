@@ -100,6 +100,25 @@
     </item>
     <item>
      <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="0">
+       <widget class="QComboBox" name="model">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>C64</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>VIC 20</string>
+         </property>
+        </item>
+       </widget>
+      </item>
       <item row="0" column="0" colspan="2">
        <widget class="QLabel" name="label">
         <property name="sizePolicy">
@@ -116,36 +135,23 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="label_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Joystick</string>
-        </property>
-        <property name="buddy">
-         <cstring>joystick</cstring>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QLabel" name="label_5">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Mouse</string>
-        </property>
-        <property name="buddy">
-         <cstring>mouse</cstring>
-        </property>
+      <item row="1" column="3">
+       <widget class="QComboBox" name="mouse">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>1351 Mouse as joy #1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>1351 Mouse as joy #2</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item row="0" column="4">
@@ -170,18 +176,8 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="5">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>Expanded memory</string>
-        </property>
-        <property name="buddy">
-         <cstring>reu</cstring>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QComboBox" name="model">
+      <item row="1" column="5">
+       <widget class="QComboBox" name="reu">
         <item>
          <property name="text">
           <string/>
@@ -189,12 +185,17 @@
         </item>
         <item>
          <property name="text">
-          <string>C64</string>
+          <string>512 kB of REU</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>VIC 20</string>
+          <string>2 MB of REU</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>16 MB of REU</string>
          </property>
         </item>
        </widget>
@@ -218,6 +219,22 @@
         </item>
        </widget>
       </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="label_5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Mouse</string>
+        </property>
+        <property name="buddy">
+         <cstring>mouse</cstring>
+        </property>
+       </widget>
+      </item>
       <item row="1" column="2">
        <widget class="QComboBox" name="joystick">
         <item>
@@ -237,23 +254,20 @@
         </item>
        </widget>
       </item>
-      <item row="1" column="3">
-       <widget class="QComboBox" name="mouse">
-        <item>
-         <property name="text">
-          <string/>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>1351 Mouse as joy #1</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>1351 Mouse as joy #2</string>
-         </property>
-        </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Joystick</string>
+        </property>
+        <property name="buddy">
+         <cstring>joystick</cstring>
+        </property>
        </widget>
       </item>
       <item row="1" column="4">
@@ -280,29 +294,28 @@
         </item>
        </widget>
       </item>
-      <item row="1" column="5">
-       <widget class="QComboBox" name="reu">
-        <item>
-         <property name="text">
-          <string/>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>512 kB of REU</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>2 MB of REU</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>16 MB of REU</string>
-         </property>
-        </item>
+      <item row="0" column="5">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Expanded memory</string>
+        </property>
+        <property name="buddy">
+         <cstring>reu</cstring>
+        </property>
        </widget>
+      </item>
+      <item row="1" column="6">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </item>
@@ -337,6 +350,19 @@
            <string>Disables Audio scaling</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </item>
@@ -421,6 +447,19 @@
            <string>Bank 5</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </item>
