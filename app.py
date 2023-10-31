@@ -130,13 +130,48 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         joy_num = int(self.sender().objectName()[-1])
         dlg = JoyConfigForm(joy_num, self.joy_config[joy_num - 1])
         if dlg.exec():
-            self.joy_config[joy_num-1]=dlg.config
+            self.joy_config[joy_num - 1] = dlg.config
             self.form_change("")
 
     def form_change(self, value) -> None:
+        self.set_items_enable()
         self.fileName.setText(self.get_filename())
         self.cjmsource.setPlainText(self.get_cjm())
         self.actionRename.setEnabled(not self.cjm_type and self.original != "")
+
+    def set_items_enable(self) -> None:
+        vic20 = self.model.currentIndex() == 2
+        self.mouse.setEnabled(not vic20)
+        self.reu.setEnabled(not vic20)
+        self.setmorejoy.setEnabled(not vic20)
+        self.ramsetting.setEnabled(vic20)
+        self.bank0.setEnabled(vic20)
+        self.bank1.setEnabled(vic20)
+        self.bank2.setEnabled(vic20)
+        self.bank3.setEnabled(vic20)
+        self.bank5.setEnabled(vic20)
+        if vic20:
+            self.mouse.setCurrentText("")
+            self.reu.setCurrentText("")
+            self.setmorejoy.setChecked(False)
+        else:
+            self.bank0.setChecked(False)
+            self.bank1.setChecked(False)
+            self.bank2.setChecked(False)
+            self.bank3.setChecked(False)
+            self.bank5.setChecked(False)
+        if not vic20:
+            self.vshift.setMinimum(-15)
+            self.vshift.setMaximum(17)
+        elif self.model2.currentIndex() == 2:
+            self.vshift.setMinimum(-13)
+            self.vshift.setMaximum(0)
+        else:
+            self.vshift.setMinimum(-16)
+            self.vshift.setMaximum(16)
+        self.joy2.setEnabled(not vic20)
+        self.joy3.setEnabled(self.setmorejoy.isChecked())
+        self.joy4.setEnabled(self.setmorejoy.isChecked())
 
     def get_filename(self) -> str:
         flags = ""
@@ -194,8 +229,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         result = "X:" + ",".join(tmp) + "\n" if tmp else ""
         for i in range(4 if self.setmorejoy.isChecked() else 2):
             tmp = self.joy_config[i][:-1]
-            result += f"J:{i + 1}{'*' if self.joystick.currentIndex()==i+1 else ''}:{','.join(tmp)}\n"
-        if self.vshift.value()!=0:
+            result += f"J:{i + 1}{'*' if self.joystick.currentIndex() == i + 1 else ''}:{','.join(tmp)}\n"
+        if self.vshift.value() != 0:
             result += f"V:{self.vshift.value()}\n"
         return result
 
