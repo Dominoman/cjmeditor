@@ -100,6 +100,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if self.cjm_type:
                 with open(self.original,'r') as f:
                     txt=f.read()
+                self.parsing_cjm(txt)
             else:
                 self.parse_filename()
             self.form_change("")
@@ -267,6 +268,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 print("Unknown flag")
         self.basename = self.basename[:-len(items[-1]) - 1]
 
+    def parsing_cjm(self,content:str)->None:
+        pass
 
 app = QApplication(sys.argv)
 
