@@ -107,10 +107,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.statusbar.showMessage(f"File {name[0]} loaded.", 2000)
 
     def file_save(self, value):
-        if self.cjm_type:
-            pass
-        else:
-            pass
+        pass
 
     def file_rename(self, value):
         new_name = os.path.join(os.path.abspath(self.path), self.get_filename())
